@@ -23,6 +23,26 @@ pyroscope.java "LABEL" {
 }
 ```
 
+## Additional Configuration for Linux Capabilities
+
+If your Kubernetes environment has Linux capabilities enabled, configure the following in your Helm values to ensure `pyroscope.java` functions properly:
+
+```yaml
+alloy:
+  securityContext:
+    runAsUser: 0
+    runAsNonRoot: false
+    capabilities:
+      add:
+        - PERFMON
+        - SYS_PTRACE
+        - SYS_RESOURCE
+        - SYS_ADMIN
+```
+These capabilities enable Alloy to access performance monitoring subsystems, trace processes, override resource limits, and perform necessary system administration tasks for profiling.
+
+**Note:** Adjust capabilities based on your specific security requirements and environment, following the principle of least privilege.
+
 ## Arguments
 
 The following arguments are supported:
