@@ -41,7 +41,10 @@ alloy:
 ```
 These capabilities enable Alloy to access performance monitoring subsystems, trace processes, override resource limits, and perform necessary system administration tasks for profiling.
 
-**Note:** Adjust capabilities based on your specific security requirements and environment, following the principle of least privilege.
+{{< admonition type="note" >}}
+Adjust capabilities based on your specific security requirements and environment, following the principle of least privilege.
+{{< /admonition >}}
+
 
 ## Arguments
 
